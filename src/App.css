@@ -7,3 +7,34 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.pokemons {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+  margin: 5em;
+  gap: 3em;
+}
+
+.pokemon-cards {
+  border: 1px solid rgb(60, 181, 222);
+  border-radius: 10px;
+  background: lightblue;
+}
+
+.pokemon-cards:hover {
+  background: rgb(101, 187, 215);
+  box-shadow: 2px 2px 2px 2px lightblue;
+  transform: scale(1.02);
+}
+
+img {
+  height: 350px;
+  width: 275px;
+}
