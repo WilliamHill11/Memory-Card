@@ -25,6 +25,8 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        let name = data.name;
+        console.log(name);
       });
   });
 
