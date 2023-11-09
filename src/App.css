@@ -1,40 +1,72 @@
-#root {
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  display: flex;
+main {
+  display: grid;
+  row-gap: 4rem;
+  padding: 2rem;
   justify-content: center;
+  grid-template: auto 1fr / 1fr;
+}
+main p {
+  text-align: center;
 }
 
 .score-board {
   display: flex;
+  gap: 15%;
   justify-content: center;
-  gap: 2em;
 }
-
-.pokemons {
-  display: flex;
-  justify-content: center;
-  padding: 2em;
-  margin: 5em;
-  gap: 3em;
+.score-board p {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 2px 2px 2px 2px var(--color-box-shadow);
 }
 
 .pokemon-cards {
-  border: 1px solid rgb(60, 181, 222);
-  border-radius: 10px;
-  background: lightblue;
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  justify-content: center;
+  grid-template: repeat(3, auto) / repeat(4, auto);
 }
 
-.pokemon-cards:hover {
-  background: rgb(101, 187, 215);
-  box-shadow: 2px 2px 2px 2px lightblue;
-  transform: scale(1.02);
+.pokemons:hover {
+  transform: scale(1.1);
+  background-color: rgb(16, 16, 173);
+  border: 1px solid darkblue;
 }
 
-img {
-  height: 350px;
-  width: 275px;
+.pokemon-cards div {
+  padding: 3.25rem 2.5rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  background-color: var(--color-yellow);
+  box-shadow: 3px 3px 3px 2px var(--color-box-shadow);
+}
+
+.end-game {
+  height: min-content;
+  padding: 2rem 2.5rem;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  border-radius: 0.3rem;
+  background-color: var(--color-yellow);
+  box-shadow: 6px 6px 0px 0px var(--color-box-shadow);
+}
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  background-color: var(--color-blue);
+  box-shadow: 6px 6px 0px 0px var(--color-box-shadow);
+}
+
+@media (width < 600px) {
+  .pokemon-cards {
+    grid-template: repeat(2, auto) / repeat(2, auto);
+  }
 }
