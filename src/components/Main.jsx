@@ -6,7 +6,7 @@ import ScoreBoard from './cards/ScoreBoard';
 import PokemonCards from './cards/PokemonCards';
 
 function Main() {
-  const POKEMONS_COUNT = 12;
+  const PokemonCount = 12;
   const [pokemons, setPokemons] = useState([]);
   const [bestScore, setBestScore] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
@@ -14,10 +14,15 @@ function Main() {
 
   useEffect(() => {
     const getPokemons = () => {
-      fetchPokemons(POKEMONS_COUNT).then((pokemonData) => {
-        const shuffledPokemons = shuffleArray(pokemonData);
-        setPokemons(shuffledPokemons);
-      });
+      fetchPokemons(PokemonCount)
+        .then((pokemonData) => {
+          console.log(pokemonData);
+          const shuffledPokemons = shuffleArray(pokemonData);
+          setPokemons(shuffledPokemons);
+        })
+        .catch((error) => {
+          console.error('Error fetching or shuffling Pokemon data:', error);
+        });
     };
     getPokemons();
   }, []);
@@ -52,7 +57,7 @@ function Main() {
   return (
     <main>
       <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
-      {bestScore === POKEMONS_COUNT ? (
+      {bestScore === PokemonCount ? (
         <EndGame playAgain={playAgain} />
       ) : (
         <PokemonCards pokemons={pokemons} handleClick={handleCardClick} />

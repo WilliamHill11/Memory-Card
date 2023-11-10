@@ -32,7 +32,7 @@ main p {
 
 .pokemons:hover {
   transform: scale(1.1);
-  background-color: rgb(16, 16, 173);
+  background-color: rgb(17, 0, 255);
   border: 1px solid darkblue;
 }
 
