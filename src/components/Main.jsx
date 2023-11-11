@@ -16,7 +16,6 @@ function Main() {
     const getPokemons = () => {
       fetchPokemons(PokemonCount)
         .then((pokemonData) => {
-          console.log(pokemonData);
           const shuffledPokemons = shuffleArray(pokemonData);
           setPokemons(shuffledPokemons);
         })
