@@ -1,4 +1,4 @@
-function ScoreBoard({ currentScore, bestScore }) {
+const ScoreBoard = ({ currentScore, bestScore }) => {
   return (
     <div className="score-board">
       <p style={{ color: 'white', backgroundColor: 'var(--color-blue)' }}>
@@ -9,6 +9,6 @@ function ScoreBoard({ currentScore, bestScore }) {
       </p>
     </div>
   );
-}
+};
 
 export default ScoreBoard;
